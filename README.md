@@ -56,3 +56,6 @@ To test out the Xinu stuff again, download the Xinu source,
 stick the files readlock.c and writelock.c in the /system/ folder, and
 add some prototypes to /include/prototypes.h.
 Maybe do some other stuff too...
+
+I'm not sure which files in /failedAttempts/ are particularly interesting
+or relevant honestly...
