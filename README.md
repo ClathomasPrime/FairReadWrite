@@ -1,6 +1,8 @@
 # FairReadWrite
 Read-write locks for Xinu that grant access in precisely the order it is requested
 
+## Problem
+
 When I learned about read-write locks in OS class,
 we learned or implemented several variants.
 They (essentially) had the different trade-offs listed
@@ -16,6 +18,8 @@ would indeed block new readers once a writer made a request.
 However, when that writer was finished, all of the waiting
 readers would be granted access (even if another writer
 had requested access before some of the readers).
+
+## Proposal
 
 In my opinion, the "obvious" policy has "global queue"
 in which readers and writers are granted access in exactly
@@ -45,3 +49,10 @@ formalism to tell precicely which lock policies are
 implementable using which sets of synchronization primitives.
 One day I hope to return to this subject;
 for now, I'm leaving this repository as a reminder.
+
+## Repo Organization
+
+To test out the Xinu stuff again, download the Xinu source,
+stick the files readlock.c and writelock.c in the /system/ folder, and
+add some prototypes to /include/prototypes.h.
+Maybe do some other stuff too...
