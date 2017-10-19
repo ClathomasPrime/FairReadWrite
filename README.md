@@ -1,5 +1,5 @@
 # FairReadWrite
-Read-write locks for Xinu that grant access in precicely the order it is requested
+Read-write locks for Xinu that grant access in precisely the order it is requested
 
 When I learned about read-write locks in OS class,
 we learned or implemented several variants.
@@ -7,7 +7,7 @@ They (essentially) had the different trade-offs listed
 [here](https://en.wikipedia.org/wiki/Readers%E2%80%93writer_lock#Priority_policies).
 I was somewhat shocked that none of the implementations had the
 property that access to the resource was granted in exactly the order it was requested
-(with multiple readers allowed simultanious access).
+(with multiple readers allowed simultaneous access).
 In particular, 
 * the "reader-biased" locks we studied
 would block the writers until no readers wanted the resource
@@ -30,18 +30,18 @@ manipulating real-time data.
 
 I tried for a while to implement this lock policy,
 but I could not manage it with "normal" mutexes
-and synchronization primatives.
+and synchronization primitives.
 Even when I tried to manually maintain a queue
 of PIDs in order to help emulate a "mixed type"
 queue of reader and writer processes,
 I could not finish the implementation.
 This lead me to implement the locks at the kernel level,
-where the implementation was straighforward.
+where the implementation was straightforward.
 
 I would love to know if this policy is actually implementable
-using ordinary synchronization primatives.
+using ordinary synchronization primitives.
 Furthermore, it would be very interesting to develop enough 
 formalism to tell precicely which lock policies are
-implementable using which sets of synchronization primative.
+implementable using which sets of synchronization primitives.
 One day I hope to return to this subject;
 for now, I'm leaving this repository as a reminder.
